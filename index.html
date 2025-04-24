@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crown Network | Lifesteal Minecraft Server</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fade-in 1.2s ease-out;
+    }
+    .glow-text {
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+    }
+    .stroke-text {
+      -webkit-text-stroke: 1px black;
+    }
+    .typewriter {
+      overflow: hidden;
+      border-right: .15em solid red;
+      white-space: nowrap;
+      animation:
+        typing 3s steps(40, end),
+        blink-caret .75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: red; }
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans" x-data="{ dark: true }">
+  <!-- Navbar -->
+  <header class="p-4 flex justify-between items-center bg-gray-800 shadow-md">
+    <div class="flex items-center gap-2">
+      <img src="/logo.png" alt="Crown Network Logo" class="w-10 h-10">
+      <h1 class="text-2xl font-bold font-cinzel glow-text">Crown Network</h1>
+    </div>
+    <nav class="space-x-4">
+      <a href="/leaderboard" class="hover:text-red-400">Leaderboard</a>
+      <a href="/shop" class="hover:text-red-400">Shop</a>
+      <a href="/discord" class="hover:text-red-400">Discord</a>
+      <a href="/rules" class="hover:text-red-400">Rules</a>
+      <a href="/about" class="hover:text-red-400">About</a>
+      <a href="/contact" class="hover:text-red-400">Contact</a>
+      <a href="/apply" class="hover:text-red-400">Apply</a>
+      <a href="/faq" class="hover:text-red-400">FAQ</a>
+      <a href="/vote" class="hover:text-red-400">Vote</a>
+      <button @click="dark = !dark" class="ml-4 bg-gray-700 px-2 py-1 rounded text-white">Toggle Theme</button>
+    </nav>
+  </header>  <!-- Hero Section -->  <section class="relative h-screen bg-cover bg-center flex items-center justify-center" style="background-image: url('/bg.jpg')">
+    <div class="bg-black bg-opacity-60 p-8 rounded-xl text-center animate-fade-in">
+      <h2 class="text-4xl md:text-6xl font-extrabold mb-4 text-red-500 font-orbitron glow-text">Welcome to</h2>
+      <div class="text-4xl md:text-6xl font-extrabold mb-6 text-white font-cinzel stroke-text glow-text typewriter">CROWN NETWORK</div>
+      <p class="text-lg md:text-2xl mb-6 italic text-gray-300">Lifesteal Minecraft at its finest. Steal hearts. Rule the crown.</p>
+      <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+        <div class="bg-gray-800 px-4 py-2 rounded flex items-center gap-2">
+          <span id="server-ip">play.crownmc.net</span>
+          <button onclick="copyIP()" class="bg-red-600 hover:bg-red-700 px-2 py-1 rounded text-sm">Copy</button>
+        </div>
+        <div class="text-green-400 font-bold" id="server-status">Checking server...</div>
+      </div>
+    </div>
+  </section>  <!-- Footer -->  <footer class="bg-gray-800 text-center text-sm text-white py-4">
+    &copy; 2025 Crown Network. All Rights Reserved.
+  </footer>  <script>
+    function copyIP() {
+      const ip = document.getElementById("server-ip").textContent;
+      navigator.clipboard.writeText(ip).then(() => alert("IP copied to clipboard!"));
+    }
+
+    // Simulated server status (replace with actual API call)
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById('server-status').innerText = "Online - 127 players";
+    });
+  </script></body>
+</html>

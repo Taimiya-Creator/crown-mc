@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ dark: true }">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rules - Crown Network</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    .glow-text {
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+    }
+    .fade-in {
+      animation: fade-in 1s ease-in-out;
+    }
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Navbar -->
+  <header class="p-4 flex justify-between items-center bg-gray-800 shadow-md">
+    <div class="flex items-center gap-2">
+      <img src="/logo.png" alt="Crown Logo" class="w-10 h-10">
+      <h1 class="text-2xl font-bold font-cinzel glow-text">Crown Network</h1>
+    </div>
+    <nav class="space-x-4">
+      <a href="index.html" class="hover:text-red-400">Home</a>
+      <a href="leaderboard.html" class="hover:text-red-400">Leaderboard</a>
+      <a href="shop.html" class="hover:text-red-400">Shop</a>
+      <a href="discord.html" class="hover:text-red-400">Discord</a>
+      <a href="rules.html" class="text-red-400 underline">Rules</a>
+      <button @click="dark = !dark" class="ml-4 bg-gray-700 px-2 py-1 rounded">Toggle Theme</button>
+    </nav>
+  </header>
+
+  <!-- Rules Section -->
+  <main class="fade-in px-6 py-16">
+    <h2 class="text-4xl md:text-5xl font-orbitron font-bold glow-text text-center mb-10">Crown Network Server Rules</h2>
+    <ul class="max-w-3xl mx-auto space-y-6 text-lg">
+      <li>1. **No Cheating** – Use of hacked clients, x-ray, or any unfair advantage is strictly prohibited.</li>
+      <li>2. **Respect Everyone** – No harassment, racism, or toxicity. Be kind and chill.</li>
+      <li>3. **No Griefing** – Don't destroy or steal from other players’ builds unless allowed.</li>
+      <li>4. **No Spam or Advertising** – Keep chat clean. No spam or external promotions.</li>
+      <li>5. **Use Common Sense** – If you think it’s wrong, it probably is. Play fair!</li>
+    </ul>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-center text-sm text-white py-4">
+    &copy; 2025 Crown Network. All Rights Reserved.
+  </footer>
+
+</body>
+</html>

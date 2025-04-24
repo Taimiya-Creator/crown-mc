@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop - Crown Network</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    .glow-text {
+      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+    }
+    .stroke-text {
+      -webkit-text-stroke: 1px black;
+    }
+    .typewriter {
+      overflow: hidden;
+      border-right: .15em solid red;
+      white-space: nowrap;
+      animation:
+        typing 3s steps(40, end),
+        blink-caret .75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: red; }
+    }
+    .fade-in {
+      animation: fade-in 1s ease-in-out;
+    }
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans" x-data="{ dark: true }">
+  <!-- Navbar -->
+  <header class="p-4 flex justify-between items-center bg-gray-800 shadow-md">
+    <div class="flex items-center gap-2">
+      <img src="/logo.png" alt="Crown Network Logo" class="w-10 h-10">
+      <h1 class="text-2xl font-bold font-cinzel glow-text">Crown Network</h1>
+    </div>
+    <nav class="space-x-4">
+      <a href="#leaderboard" class="hover:text-red-400">Leaderboard</a>
+      <a href="#shop" class="hover:text-red-400">Shop</a>
+      <a href="#discord" class="hover:text-red-400">Discord</a>
+      <button @click="dark = !dark" class="ml-4 bg-gray-700 px-2 py-1 rounded text-white">Toggle Theme</button>
+    </nav>
+  </header>
+
+  <!-- Shop Section -->
+  <section class="py-16 px-8 bg-gray-800">
+    <h2 class="text-4xl md:text-5xl font-bold text-center text-white mb-8 font-orbitron glow-text fade-in">WELCOME TO THE SHOP OF CROWN NETWORK</h2>
+    
+    <div class="max-w-6xl mx-auto bg-gray-900 rounded-lg shadow-lg p-8">
+      <div class="flex justify-between mb-6">
+        <div class="flex items-center gap-4">
+          <label for="filter" class="text-white">Filter:</label>
+          <select id="filter" class="bg-gray-700 text-white px-4 py-2 rounded">
+            <option value="weapons">Weapons</option>
+            <option value="armor">Armor</option>
+            <option value="tools">Tools</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-4">
+          <label for="search" class="text-white">Search:</label>
+         <input type="text" id="search" placeholder="..." class="bg-gray-700 text-white px-1 py-1 rounded w-20 text-xs">
+      </div>
+</div>
+      
+      <!-- Shop Items -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div class="bg-gray-700 p-4 rounded-lg shadow-lg fade-in">
+          <h3 class="text-lg font-bold text-white">Nitro Boost - Protection 4 Netherite Armour and Max Tools with Legendary Rank</h3>
+          <p class="text-white">Price: ₹500</p>
+          <button class="mt-2 bg-red-500 px-4 py-2 rounded text-white">Buy Now</button>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-lg shadow-lg fade-in">
+          <h3 class="text-lg font-bold text-white">VIP - Protection 1 Netherite Armour</h3>
+          <p class="text-white">Price: ₹50</p>
+          <button class="mt-2 bg-red-500 px-4 py-2 rounded text-white">Buy Now</button>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-lg shadow-lg fade-in">
+          <h3 class="text-lg font-bold text-white">Premium - Protection 3 Netherite Armour</h3>
+          <p class="text-white">Price: ₹100</p>
+          <button class="mt-2 bg-red-500 px-4 py-2 rounded text-white">Buy Now</button>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-lg shadow-lg fade-in">
+          <h3 class="text-lg font-bold text-white">Legendary - Protection 4 Netherite Armour</h3>
+          <p class="text-white">Price: ₹250</p>
+          <button class="mt-2 bg-red-500 px-4 py-2 rounded text-white">Buy Now</button>
+        </div>
+        <div class="bg-gray-700 p-4 rounded-lg shadow-lg fade-in">
+          <h3 class="text-lg font-bold text-white">Custom Rank - Protection 5 Netherite Armour (Rank for 5 People)</h3>
+          <p class="text-white">Price: ₹500</p>
+          <button class="mt-2 bg-red-500 px-4 py-2 rounded text-white">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-center text-sm text-white py-4">
+    &copy; 2025 Crown Network. All Rights Reserved.
+  </footer>
+
+  <script>
+    // Add logic for search and filter
+    document.getElementById('search').addEventListener('input', function () {
+      // Implement search logic here
+    });
+    document.getElementById('filter').addEventListener('change', function () {
+      // Implement filter logic here
+    });
+  </script>
+</body>
+</html>
